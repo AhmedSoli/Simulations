@@ -12,7 +12,16 @@
 # the superrational solution is explained in this video: 
 # https://www.youtube.com/watch?v=NkYCWqzBc7M&t=440s
 
-from Participant import Participant
+import numpy as np 
+
+class Participant:
+	
+	def __init__(self,ID):
+		self.ID = ID
+
+	def decide(self,chance):
+		return (np.random.randint(chance) == 1)
+
 
 repetitions = 100
 num_participants = int(10000000 * 0.999999)
